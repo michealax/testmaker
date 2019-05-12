@@ -1,0 +1,110 @@
+<div class="fill"></div>
+<div class="page-header text-center">Test Maker</div>
+
+<div class="btn-group text-center border" role="group" aria-label="...">
+    <button type="button" class="btn btn-default ">导出</button>
+    <button type="button" class="btn btn-default" (click)="preview()">预览</button>
+</div>
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">查询题目</div>
+
+
+    <!-- List group -->
+    <ul class="list-group">
+        <li class="list-group-item">类型: <label>
+            <select class="col-md-12 form-control custom-width" name="chapter"
+                    (change)="chapterChange($event.target.value)">
+                <option value="-1">全部</option>
+                <option *ngFor="let chapter of chapters" [value]="chapter.type">{{chapter.type}}</option>
+            </select>
+        </label></li>
+        <li class="list-group-item">语言: <label>
+            <select class="col-md-12 form-control custom-width" (change)="languageChange($event.target.value)">
+                <option value="-1">全部</option>
+                <option *ngFor="let language of languages" [value]="language.name">{{language.name}}</option>
+            </select>
+        </label></li>
+    </ul>
+</div>
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">题目</div>
+
+    <!-- Table -->
+    <table class="table table-bordered text-center">
+        <tr>
+            <td>num</td>
+            <td class="des">描述</td>
+            <td class="dif">难度</td>
+            <td class="score">分值</td>
+            <td class="stem">stem</td>
+            <td class="language">语言</td>
+            <td class="type">类型</td>
+            <td class="add">添加</td>
+        </tr>
+        <tr *ngFor="let question of data;let i = index">
+            <td>{{i}}</td>
+            <td class="des">{{question.description}}</td>
+            <td class="dif">{{question.difficulty}}</td>
+            <td class="score">{{question.score}}</td>
+            <td class="stem">{{question.stem}}</td>
+            <td class="language">{{question.language}}</td>
+            <td class="type">{{question.type}}</td>
+            <td class="add">
+                <button class="btn-success" (click)="add(i)">添加</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">添加的题目</div>
+
+    <!-- Table -->
+    <table class="table table-bordered text-center">
+        <tr>
+            <td>num</td>
+            <td class="des">描述</td>
+            <td class="dif">难度</td>
+            <td class="score">分值</td>
+            <td class="stem">stem</td>
+            <td class="language">语言</td>
+            <td class="type">类型</td>
+            <td class="add">删除</td>
+            <td class="add">上移</td>
+            <td class="add">下移</td>
+        </tr>
+        <tr *ngFor="let item of selected;let i = index">
+            <td>{{i}}</td>
+            <td class="des">{{item.description}}</td>
+            <td class="dif">{{item.difficulty}}</td>
+            <td class="score">{{item.score}}</td>
+            <td class="stem">{{item.stem}}</td>
+            <td class="language">{{item.language}}</td>
+            <td class="type">{{item.type}}</td>
+            <td class="add">
+                <button class="btn-danger" (click)="del(i)">移除</button>
+            </td>
+            <td class="add">
+                <button class="btn-dark" (click)="up(i)">上移</button>
+            </td>
+            <td class="add">
+                <button class="btn-dark" (click)="down(i)">下移</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>-->
+
+<!--<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">-->
+    <!--<div class="modal-dialog modal-sm" role="document">-->
+        <!--<div class="modal-content">-->
+            <!--...-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

@@ -1,0 +1,57 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+.page-header{
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    margin-top: 0;
+}
+
+/*.text-center{*/
+/*background-color: black;*/
+/*}*/
+
+.fill{
+    width: 100%;
+    height: 20px;
+    background-color: black;
+}
+
+.panel{
+    margin: 20px 10%;
+}
+
+.custom-width{
+    width: 150px;
+}
+
+.des{
+    width: 120px;
+}
+.dif{
+    width: 20px;
+}
+
+.stem{
+    width: 100px;
+}
+
+.score{
+    width: 20px;
+}
+
+.language{
+    width: 40px;
+}
+
+.type{
+    width: 20px;
+}
+
+.add{
+    width: 120px;
+}
+
+.border{
+    width: 100%;
+}
